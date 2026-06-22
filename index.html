@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dior Johnson personal brand page by Dropstep. Lifestyle, fashion, and basketball presence for the UCF guard.">
+  <title>Dior Johnson | Dropstep</title>
+
+  <!--
+    DIOR JOHNSON CONTENT BLOCK
+    Replace these values throughout the page when final assets are ready.
+
+    Name: Dior Johnson
+    Identity line: 5-star guard with tunnel-fit energy and creator reach.
+    School: UCF
+    Recruit status: 5-star recruit
+    Followers: 500K+
+    Instagram: @diorr
+    TikTok: @diorjohnson
+    X/Twitter: @DiorJohnson
+    Quote: "Style travels before the stat line."
+
+    Image notes:
+    - Current images live in /assets and were pulled from the provided Dior Instagram save.
+    - Replace or add more images in the same folder as final photo selects come in.
+    - Keep the alt text specific to the actual image once photos are changed.
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #0A0A0A;
+      --black-soft: #111111;
+      --ink: #F4F0E6;
+      --muted: rgba(244, 240, 230, 0.66);
+      --faint: rgba(244, 240, 230, 0.12);
+      --gold: #C9A84C;
+      --gold-dim: rgba(201, 168, 76, 0.22);
+      --line: rgba(201, 168, 76, 0.28);
+      --display: "Oswald", Impact, sans-serif;
+      --body: "Rajdhani", system-ui, sans-serif;
+      --max: 1180px;
+      --gutter: clamp(18px, 4vw, 48px);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--black);
+      color: var(--ink);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: var(--body);
+      background:
+        radial-gradient(circle at 16% 8%, rgba(201, 168, 76, 0.2), transparent 28rem),
+        radial-gradient(circle at 82% 18%, rgba(155, 83, 45, 0.18), transparent 34rem),
+        radial-gradient(circle at 50% 82%, rgba(244, 240, 230, 0.07), transparent 28rem),
+        linear-gradient(135deg, #080808 0%, #16120c 32%, #050505 62%, #0f0a06 100%);
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      content: "";
+      background:
+        linear-gradient(90deg, rgba(201, 168, 76, 0.08), transparent 18%, transparent 82%, rgba(201, 168, 76, 0.06)),
+        radial-gradient(ellipse at center, transparent 0 42%, rgba(0, 0, 0, 0.46) 100%),
+        linear-gradient(180deg, rgba(255, 246, 220, 0.045), transparent 24%, rgba(0, 0, 0, 0.24) 100%);
+      mix-blend-mode: screen;
+      opacity: 0.72;
+    }
+
+    body::after {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      content: "";
+      opacity: 0.34;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.38'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 5px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .page-shell {
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px var(--gutter);
+      color: rgba(244, 240, 230, 0.86);
+      background: linear-gradient(180deg, rgba(10, 10, 10, 0.84), rgba(10, 10, 10, 0));
+      backdrop-filter: blur(10px);
+    }
+
+    .mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .mark::before {
+      width: 8px;
+      height: 8px;
+      content: "";
+      background: var(--gold);
+      box-shadow: 0 0 28px var(--gold);
+      transform: rotate(45deg);
+    }
+
+    .nav__links {
+      display: flex;
+      gap: clamp(14px, 3vw, 34px);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .nav__links a {
+      color: var(--muted);
+      transition: color 180ms ease;
+    }
+
+    .nav__links a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: 100svh;
+      padding: 118px var(--gutter) 52px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero__image-wrap {
+      position: absolute;
+      inset: 76px var(--gutter) 36px auto;
+      z-index: -1;
+      width: min(44vw, 610px);
+      min-width: 380px;
+      overflow: hidden;
+      border: 1px solid rgba(201, 168, 76, 0.22);
+      border-radius: 999px 999px 28px 28px;
+      background: #151515;
+      box-shadow: 0 40px 120px rgba(0, 0, 0, 0.62);
+    }
+
+    .hero__image-wrap::before {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      content: "";
+      background:
+        linear-gradient(90deg, rgba(10, 10, 10, 0.78), transparent 42%),
+        linear-gradient(0deg, rgba(10, 10, 10, 0.68), transparent 36%),
+        radial-gradient(circle at 68% 22%, transparent 0 24%, rgba(201, 168, 76, 0.12) 25%, transparent 45%);
+    }
+
+    .hero__image-wrap::after {
+      position: absolute;
+      inset: 16px;
+      z-index: 3;
+      content: "";
+      border: 1px solid rgba(244, 240, 230, 0.12);
+      border-radius: inherit;
+      pointer-events: none;
+    }
+
+    .hero__content {
+      display: grid;
+      align-content: end;
+      max-width: var(--max);
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      width: fit-content;
+      margin: 0 0 22px;
+      color: var(--gold);
+      font-size: clamp(0.8rem, 1vw, 0.96rem);
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::after {
+      display: inline-block;
+      width: 64px;
+      height: 1px;
+      content: "";
+      background: var(--gold);
+      opacity: 0.72;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    .hero h1 {
+      max-width: 980px;
+      font-family: "Anton", Impact, sans-serif;
+      font-weight: 400;
+      font-size: clamp(6.4rem, 18vw, 17rem);
+      line-height: 0.78;
+      letter-spacing: -0.045em;
+      text-transform: uppercase;
+      text-shadow: 0 18px 52px rgba(0, 0, 0, 0.72);
+    }
+
+    .hero__tagline {
+      max-width: 640px;
+      margin-top: clamp(20px, 3vw, 34px);
+      color: rgba(244, 240, 230, 0.88);
+      font-size: clamp(1.15rem, 2.1vw, 2rem);
+      font-weight: 500;
+      line-height: 1.08;
+      letter-spacing: 0.02em;
+    }
+
+    main {
+      position: relative;
+    }
+
+    .section {
+      width: min(var(--max), calc(100% - (var(--gutter) * 2)));
+      margin: 0 auto;
+      padding: clamp(76px, 11vw, 142px) 0;
+    }
+
+    .cred-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--faint);
+      background: linear-gradient(90deg, rgba(201, 168, 76, 0.08), rgba(244, 240, 230, 0.025), rgba(201, 168, 76, 0.04));
+    }
+
+    .cred {
+      min-height: 154px;
+      padding: clamp(22px, 3vw, 34px);
+      border-right: 1px solid rgba(244, 240, 230, 0.1);
+    }
+
+    .cred:last-child {
+      border-right: 0;
+    }
+
+    .cred__label,
+    .caption,
+    .brand-card span,
+    .footer__label {
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .cred strong {
+      display: block;
+      margin-top: 16px;
+      font-family: var(--display);
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+    }
+
+    .cred a,
+    .cred p {
+      display: block;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(280px, 0.48fr);
+      gap: clamp(28px, 6vw, 84px);
+      align-items: end;
+      margin-bottom: clamp(34px, 6vw, 72px);
+    }
+
+    .section-kicker {
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(2.9rem, 6.5vw, 6.1rem);
+      line-height: 1.18;
+      letter-spacing: -0.005em;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.45vw, 1.34rem);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.05fr 0.72fr 0.92fr;
+      grid-template-rows: 260px 220px 300px;
+      gap: clamp(14px, 2vw, 24px);
+    }
+
+    .shot {
+      position: relative;
+      min-height: 220px;
+      overflow: hidden;
+      border: 1px solid rgba(244, 240, 230, 0.12);
+      background: #151515;
+    }
+
+    .shot::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background: linear-gradient(180deg, transparent 42%, rgba(0, 0, 0, 0.78));
+    }
+
+    .shot--hero {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2;
+      border-radius: 28px 28px 6px 28px;
+    }
+
+    .shot--hero img {
+      object-position: center top;
+    }
+
+    .shot--tall {
+      grid-column: 3;
+      grid-row: 1 / span 3;
+      border-radius: 999px 999px 18px 18px;
+    }
+
+    .shot--wide {
+      grid-column: 1;
+      grid-row: 3;
+      border-radius: 6px 28px 6px 6px;
+    }
+
+    .shot--detail {
+      grid-column: 2;
+      grid-row: 3;
+      border-radius: 28px 6px 28px 6px;
+    }
+
+    .shot__caption {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 16px;
+      z-index: 2;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .caption {
+      color: rgba(244, 240, 230, 0.76);
+    }
+
+    .shot__number {
+      color: rgba(201, 168, 76, 0.72);
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+
+    .brand-moment {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(201, 168, 76, 0.12), transparent 40%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.012));
+    }
+
+    .brand-moment::before {
+      position: absolute;
+      inset: 16px;
+      content: "";
+      border: 1px solid rgba(244, 240, 230, 0.08);
+      border-radius: 24px;
+      pointer-events: none;
+    }
+
+    .brand-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(280px, 0.5fr);
+      gap: clamp(32px, 6vw, 78px);
+      align-items: center;
+      padding: clamp(28px, 6vw, 72px);
+    }
+
+    .brand-title {
+      max-width: 790px;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(2.7rem, 5.4vw, 5.15rem);
+      line-height: 1.18;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      text-wrap: balance;
+      word-spacing: 0.04em;
+    }
+
+    .brand-title span {
+      display: block;
+    }
+
+    .brand-copy {
+      max-width: 620px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 1.8vw, 1.48rem);
+      font-weight: 500;
+      line-height: 1.34;
+    }
+
+    .brand-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .brand-card {
+      padding: 20px;
+      border: 1px solid rgba(244, 240, 230, 0.1);
+      border-radius: 20px;
+      background: rgba(10, 10, 10, 0.44);
+    }
+
+    .brand-card strong {
+      display: block;
+      margin-top: 10px;
+      color: var(--ink);
+      font-size: 1.38rem;
+      font-weight: 700;
+      line-height: 1.08;
+      text-transform: uppercase;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 14px 18px 12px;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      color: #080808;
+      background: var(--gold);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: #dfbf64;
+    }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      width: min(var(--max), calc(100% - (var(--gutter) * 2)));
+      margin: 0 auto;
+      padding: 42px 0 54px;
+      border-top: 1px solid rgba(244, 240, 230, 0.11);
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .footer a {
+      color: var(--ink);
+      transition: color 180ms ease;
+    }
+
+    .footer a:hover {
+      color: var(--gold);
+    }
+
+    .footer__brand {
+      display: grid;
+      gap: 6px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .load-reveal {
+      animation: loadReveal 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+
+    .load-reveal:nth-child(2) {
+      animation-delay: 120ms;
+    }
+
+    .load-reveal:nth-child(3) {
+      animation-delay: 220ms;
+    }
+
+    @keyframes loadReveal {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero {
+        min-height: auto;
+        padding-top: 96px;
+      }
+
+      .hero__image-wrap {
+        position: relative;
+        inset: auto;
+        order: -1;
+        width: min(100%, 560px);
+        min-width: 0;
+        height: clamp(390px, 78vw, 620px);
+        margin: 0 auto 28px;
+      }
+
+      .hero__content {
+        align-content: start;
+      }
+
+      .hero h1 {
+        font-size: clamp(5.8rem, 24vw, 12rem);
+      }
+
+      .cred-strip,
+      .section-head,
+      .brand-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .cred-strip {
+        width: min(var(--max), calc(100% - (var(--gutter) * 2)));
+        margin: 0 auto;
+      }
+
+      .cred {
+        min-height: 0;
+        border-right: 0;
+        border-bottom: 1px solid rgba(244, 240, 230, 0.1);
+      }
+
+      .cred:last-child {
+        border-bottom: 0;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 0.72fr;
+        grid-template-rows: 360px 240px 300px;
+      }
+
+      .shot--hero {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+      }
+
+      .shot--tall {
+        grid-column: 1;
+        grid-row: 2 / span 2;
+        border-radius: 999px 999px 16px 16px;
+      }
+
+      .shot--wide {
+        grid-column: 2;
+        grid-row: 2;
+      }
+
+      .shot--detail {
+        grid-column: 2;
+        grid-row: 3;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        align-items: flex-start;
+        padding-top: 18px;
+      }
+
+      .nav__links {
+        display: none;
+      }
+
+      .hero {
+        padding-bottom: 34px;
+      }
+
+      .hero__image-wrap {
+        height: 70vh;
+        max-height: 620px;
+        border-radius: 999px 999px 22px 22px;
+      }
+
+      .hero h1 {
+        font-size: clamp(5.4rem, 28vw, 8.2rem);
+        line-height: 0.82;
+        letter-spacing: -0.055em;
+      }
+
+      .hero__tagline {
+        font-size: clamp(1.22rem, 6vw, 1.72rem);
+      }
+
+      .section {
+        padding: 68px 0;
+      }
+
+      .section-title {
+        font-size: clamp(2.7rem, 11vw, 4.2rem);
+        line-height: 1.18;
+      }
+
+      .gallery {
+        display: block;
+      }
+
+      .shot {
+        height: 420px;
+        margin-bottom: 16px;
+      }
+
+      .shot--wide,
+      .shot--detail {
+        height: 300px;
+      }
+
+      .brand-moment {
+        border-radius: 24px;
+      }
+
+      .brand-inner {
+        padding: 28px;
+      }
+
+      .brand-title {
+        font-size: clamp(2.5rem, 10vw, 3.7rem);
+        line-height: 1.2;
+      }
+
+      .footer {
+        display: grid;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="nav" aria-label="Primary navigation">
+      <nav class="nav__links" aria-label="Page sections">
+        <a href="#proof">Proof</a>
+        <a href="#gallery">Lookbook</a>
+        <a href="#work">Work</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__image-wrap load-reveal" aria-label="Dior Johnson hero image">
+        <img
+          src="assets/dior-2.jpg"
+          alt="Dior Johnson greeting fans in UCF gear before a game"
+        >
+      </div>
+
+      <div class="hero__content">
+        <h1 id="hero-title" class="load-reveal">Dior Johnson</h1>
+        <p class="hero__tagline load-reveal">A 5-star guard with creator reach, personal style, and the kind of camera-ready presence that makes product feel cultural.</p>
+      </div>
+    </section>
+
+    <main>
+      <section id="proof" class="cred-strip reveal" aria-label="Dior Johnson credibility">
+        <article class="cred">
+          <span class="cred__label">Recruit</span>
+          <strong>5-Star</strong>
+          <p>National profile with built-in attention.</p>
+        </article>
+        <article class="cred">
+          <span class="cred__label">Program</span>
+          <strong>UCF</strong>
+          <p>Big 12 stage. Orlando energy.</p>
+        </article>
+        <article class="cred">
+          <span class="cred__label">Audience</span>
+          <strong>500K+</strong>
+          <p>Reach across hoops, style, and culture.</p>
+        </article>
+        <article class="cred">
+          <span class="cred__label">Handles</span>
+          <strong>@diorr</strong>
+          <a href="https://www.instagram.com/" aria-label="Dior Johnson social links">IG / TikTok / X</a>
+        </article>
+      </section>
+
+      <section id="gallery" class="section">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-kicker">Editorial Lookbook</p>
+            <h2 class="section-title">Fits, flashes, arrivals.</h2>
+          </div>
+          <p class="section-copy">For lifestyle partners, Dior gives product a real setting: arrival fits, jewelry details, night shots, campaign moments, and the kind of off-court presence that feels native instead of forced.</p>
+        </div>
+
+        <div class="gallery" aria-label="Dior Johnson editorial image gallery">
+          <figure class="shot shot--hero reveal">
+            <img
+              src="assets/dior-night-fit-01.png"
+              alt="Dior Johnson wearing jewelry and a graphic shirt at night"
+            >
+            <figcaption class="shot__caption">
+              <span class="caption">Night Fit / Full Bleed</span>
+              <span class="shot__number">01</span>
+            </figcaption>
+          </figure>
+
+          <figure class="shot shot--tall reveal">
+            <img
+              src="assets/dior-fashion-unknwn.jpg"
+              alt="Dior Johnson posing in Spalding and UNKNWN apparel"
+            >
+            <figcaption class="shot__caption">
+              <span class="caption">Campaign / Apparel</span>
+              <span class="shot__number">02</span>
+            </figcaption>
+          </figure>
+
+          <figure class="shot shot--wide reveal">
+            <img
+              src="assets/dior-fashion-spalding.jpg"
+              alt="Dior Johnson in a Spalding fashion campaign on an outdoor court"
+            >
+            <figcaption class="shot__caption">
+              <span class="caption">Brand Collab / Spalding</span>
+              <span class="shot__number">03</span>
+            </figcaption>
+          </figure>
+
+          <figure class="shot shot--detail reveal">
+            <img
+              src="assets/dior-fashion-recent-2.jpg"
+              alt="Dior Johnson in a black graphic tee and jewelry in a nightlife setting"
+            >
+            <figcaption class="shot__caption">
+              <span class="caption">Jewelry / Lifestyle</span>
+              <span class="shot__number">04</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="work" class="section">
+        <div class="brand-moment reveal">
+          <div class="brand-inner">
+            <div>
+              <p class="section-kicker">Brand Partnerships</p>
+              <h2 class="brand-title">
+                <span>Put your brand</span>
+                <span>in Dior's orbit.</span>
+              </h2>
+              <p class="brand-copy">Dior gives partners more than a post. He brings a 5-star UCF spotlight, 500K+ social reach, and a visual world where apparel, footwear, jewelry, grooming, and lifestyle products can show up naturally.</p>
+              <div class="cta-row">
+                <a class="button" href="mailto:team@dropstep.io?subject=Dior%20Johnson%20Brand%20Inquiry">Partner with Dior</a>
+              </div>
+            </div>
+
+            <div class="brand-list" aria-label="Brand fit categories">
+              <article class="brand-card">
+                <span>01 / Campaigns</span>
+                <strong>Product launches, seeded looks, editorial social content.</strong>
+              </article>
+              <article class="brand-card">
+                <span>02 / Lifestyle</span>
+                <strong>Streetwear, footwear, jewelry, grooming, nightlife.</strong>
+              </article>
+              <article class="brand-card">
+                <span>03 / Game Day</span>
+                <strong>Arrival fits, arena walk-ins, warmup visibility.</strong>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__brand">
+        <span class="footer__label">Built by Dropstep</span>
+      </div>
+      <a href="https://dropstep.io" aria-label="Visit Dropstep">dropstep.io</a>
+    </footer>
+  </div>
+
+  <script>
+    const revealItems = document.querySelectorAll(".reveal");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    } else {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.16 }
+      );
+
+      revealItems.forEach((item) => observer.observe(item));
+    }
+  </script>
+</body>
+</html>
